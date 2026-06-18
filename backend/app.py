@@ -12,7 +12,12 @@ from huggingface_hub import hf_hub_download
 app = Flask(__name__)
 CORS(
     app,
-    resources={r"/*": {"origins": ["http://localhost:5173", "http://localhost:8080"]}},
+    resources={r"/*": {"origins": [
+        "http://localhost:5173", 
+        "http://localhost:8080",
+        "https://medical-frontend-hazel.vercel.app",
+        "https://medical-frontend-2.vercel.app"
+    ]}},
     supports_credentials=True,
 )
 # Khởi tạo pipeline (load model một lần khi start server)
